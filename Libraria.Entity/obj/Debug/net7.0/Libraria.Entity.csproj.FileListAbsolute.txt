@@ -1,0 +1,14 @@
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\net7.0\Libraria.Entity.deps.json
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\net7.0\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\net7.0\Libraria.Entity.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.AssemblyInfo.cs
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\refint\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\ref\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\net7.0\Libraria.Entity.runtimeconfig.json
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\net7.0\Libraria.Entity.genruntimeconfig.cache

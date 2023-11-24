@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Business.deps.json
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Business.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Business.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Data.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Data.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\net7.0\Libraria.Entity.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.AssemblyInfo.cs
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.csproj.CopyComplete
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\refint\Libraria.Business.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\Libraria.Business.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\net7.0\ref\Libraria.Business.dll

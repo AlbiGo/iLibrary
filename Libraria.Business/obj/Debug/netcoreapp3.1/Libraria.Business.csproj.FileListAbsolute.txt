@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Business.deps.json
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Business.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Business.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.AssemblyInfo.cs
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Data.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Data.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\bin\Debug\netcoreapp3.1\Libraria.Entity.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.csproj.CopyComplete
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Libraria\Libraria.Business\obj\Debug\netcoreapp3.1\Libraria.Business.GeneratedMSBuildEditorConfig.editorconfig

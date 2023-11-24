@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\netcoreapp3.1\Libraria.Entity.deps.json
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\netcoreapp3.1\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Entity\bin\Debug\netcoreapp3.1\Libraria.Entity.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.AssemblyInfo.cs
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.dll
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.pdb
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Libraria\Libraria.Entity\obj\Debug\netcoreapp3.1\Libraria.Entity.GeneratedMSBuildEditorConfig.editorconfig
