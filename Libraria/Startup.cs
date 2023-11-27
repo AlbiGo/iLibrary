@@ -45,12 +45,14 @@ namespace Libraria
         {
             services.AddControllers();
             services.AddHttpContextAccessor();
+
             services.AddEntityFrameworkSqlServer()
          .AddDbContext<LibrariaDbContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
             services.AddIdentity<Perdorues, IdentityRole>()
              .AddEntityFrameworkStores<LibrariaDbContext >()
              .AddDefaultTokenProviders();
+            
             services.AddTransient<IAuthMediator, AuthMediator>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IAuthMediator, AuthMediator>();
@@ -92,11 +94,6 @@ namespace Libraria
                        .AllowAnyMethod();
                 });
             });
-
-
-
-
-
 
             services.AddAuthentication(options =>
             {

@@ -3,3 +3,11 @@ Libraria.Data/obj
 Libraria/obj
 Libraria.Entity/obj
 .vs
+/Libraria/bin/STAGE/net7.0
+/Libraria.Business/bin/STAGE/net7.0
+/Libraria.Data/bin/STAGE/net7.0
+/Libraria.Entity/bin/STAGE/net7.0/Libraria.Entity.runtimeconfig.json
+/Libraria.Entity/bin/STAGE/net7.0/Libraria.Entity.pdb
+/Libraria.Entity/bin/STAGE/net7.0/Libraria.Entity.dll
+/Libraria.Entity/bin/STAGE/net7.0/Libraria.Entity.deps.json
+/Libraria.Entity/bin/STAGE/net7.0
