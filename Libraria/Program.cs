@@ -13,20 +13,27 @@ namespace Libraria
 {
     public class Program
     {
+        static string _env;
         public static void Main(string[] args)
         {
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            _env = config.GetSection("ENV").Value;
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((hostingContext, confing) =>
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
                 {
                     Console.WriteLine(hostingContext.HostingEnvironment.EnvironmentName);
-                    confing.SetBasePath(Directory.GetCurrentDirectory());
-                    confing.AddJsonFile($"appsettings.json", optional : true, reloadOnChange : true);
-                    confing.AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}json", optional: true, reloadOnChange: true);
-                    confing.AddEnvironmentVariables();
-                }).UseStartup<Startup>();
+                    config.SetBasePath(Directory.GetCurrentDirectory());
+                    config.AddJsonFile($"appsettings.json");
+                    config.AddJsonFile($"appsettings.{_env}.json");
+                    config.AddEnvironmentVariables();
+                })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }

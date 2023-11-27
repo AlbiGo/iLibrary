@@ -11,3 +11,7 @@ Libraria.Entity/obj
 /Libraria.Entity/bin/STAGE/net7.0/Libraria.Entity.dll
 /Libraria.Entity/bin/STAGE/net7.0/Libraria.Entity.deps.json
 /Libraria.Entity/bin/STAGE/net7.0
+Libraria/bin
+Libraria.Business/bin
+Libraria.Data/bin
+Libraria.Entity/bin

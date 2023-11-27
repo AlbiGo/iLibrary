@@ -26,29 +26,44 @@ using DinkToPdf;
 using Libraria.DLLManagement;
 using System.IO;
 using Microsoft.OpenApi.Models;
+using System.Runtime;
 
 namespace Libraria
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration , Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
-        {
-            Configuration = configuration;
-            _hostingEnvironment = hostingEnvironment;
-        }
+        private readonly AppConfig _appConfig;
 
         public IConfiguration Configuration { get; }
         private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+        public Startup(IConfiguration configuration ,Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+        {
+            Configuration = configuration;
+            _hostingEnvironment = hostingEnvironment;
+            _appConfig = new AppConfig();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             services.AddHttpContextAccessor();
+            services.AddOptions();
+            services.AddSingleton<IConfiguration>(Configuration);   // IConfiguration explicitly
+            services.AddSingleton<AppConfig>();
+            var _configuretion = 
+            // Add our Config object so it can be injected
+            services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
+
+            // *If* you need access to generic IConfiguration this is **required**
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            Configuration.GetSection("AppConfig").Bind(_appConfig);
 
             services.AddEntityFrameworkSqlServer()
          .AddDbContext<LibrariaDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
+           options.UseSqlServer(_appConfig.Connection));
+
             services.AddIdentity<Perdorues, IdentityRole>()
              .AddEntityFrameworkStores<LibrariaDbContext >()
              .AddDefaultTokenProviders();
