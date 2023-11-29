@@ -18,6 +18,7 @@ namespace Libraria
         {
             var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
             _env = config.GetSection("ENV").Value;
+            Console.WriteLine("ENV :" + _env);
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -25,10 +26,11 @@ namespace Libraria
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    Console.WriteLine(hostingContext.HostingEnvironment.EnvironmentName);
+                    Console.WriteLine(_env);
                     config.SetBasePath(Directory.GetCurrentDirectory());
                     config.AddJsonFile($"appsettings.json");
-                    config.AddJsonFile($"appsettings.{_env}.json");
+                    if (!string.IsNullOrEmpty(_env))
+                        config.AddJsonFile($"appsettings.{_env}.json");
                     config.AddEnvironmentVariables();
                 })
             .ConfigureWebHostDefaults(webBuilder =>

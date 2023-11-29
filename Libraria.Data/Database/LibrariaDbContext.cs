@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,15 +11,13 @@ namespace Libraria.Data.Database
 {
     public class LibrariaDbContext : DbContext//IdentityDbContext<Perdorues>, IDisposable
     {
-     
         public LibrariaDbContext(DbContextOptions<LibrariaDbContext> options)
-            : base(options)
+           : base(options)
         {
 
         }
-        public LibrariaDbContext()
-        {
-        }
+      
+
         public DbSet<Liber> Librat { get; set; }
         public DbSet<StatusLibri> Statuset { get; set; }
         public DbSet<Perdorues> Perdoruesit { get; set; }
@@ -35,6 +34,7 @@ namespace Libraria.Data.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //optionsBuilder.UseSqlServer(_appConfig.Connection);
             optionsBuilder.UseLazyLoadingProxies();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -124,10 +124,6 @@ namespace Libraria.Data.Database
                         Pershkrimi = "Histori"
                     }
                 );
-
-
         }
-
-
     }
 }

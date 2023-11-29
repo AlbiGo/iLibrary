@@ -27,6 +27,10 @@ using Libraria.DLLManagement;
 using System.IO;
 using Microsoft.OpenApi.Models;
 using System.Runtime;
+using Libraria.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Google;
 
 namespace Libraria
 {
@@ -49,8 +53,10 @@ namespace Libraria
             services.AddControllers();
             services.AddHttpContextAccessor();
             services.AddOptions();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddSingleton<IConfiguration>(Configuration);   // IConfiguration explicitly
-            services.AddSingleton<AppConfig>();
+            //services.AddSingleton<AppConfigInterface, AppConfig>();
             var _configuretion = 
             // Add our Config object so it can be injected
             services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
@@ -59,15 +65,15 @@ namespace Libraria
             services.AddSingleton<IConfiguration>(Configuration);
 
             Configuration.GetSection("AppConfig").Bind(_appConfig);
+            services.AddSqlServer<LibrariaDbContext>(_appConfig.Connection);
 
-            services.AddEntityFrameworkSqlServer()
-         .AddDbContext<LibrariaDbContext>(options =>
-           options.UseSqlServer(_appConfig.Connection));
+            services.AddDbContext<LibrariaDbContext>(options =>
+            options.UseSqlServer(_appConfig.Connection));//Connection String
 
             services.AddIdentity<Perdorues, IdentityRole>()
              .AddEntityFrameworkStores<LibrariaDbContext >()
              .AddDefaultTokenProviders();
-            
+
             services.AddTransient<IAuthMediator, AuthMediator>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IAuthMediator, AuthMediator>();
@@ -115,22 +121,22 @@ namespace Libraria
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+            });
 
-           // Adding Jwt Bearer  
-           .AddJwtBearer(options =>
-           {
-               options.SaveToken = true;
-               options.RequireHttpsMetadata = false;
-               options.TokenValidationParameters = new TokenValidationParameters()
-               {
-                   ValidateIssuer = true,
-                   ValidateAudience = true,
-                   ValidAudience = Configuration["JWT:ValidAudience"],
-                   ValidIssuer = Configuration["JWT:ValidIssuer"],
-                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
-               };
-           });
+           //// Adding Jwt Bearer  
+           //.AddJwtBearer(options =>
+           //{
+           //    options.SaveToken = true;
+           //    options.RequireHttpsMetadata = false;
+           //    options.TokenValidationParameters = new TokenValidationParameters()
+           //    {
+           //        ValidateIssuer = true,
+           //        ValidateAudience = true,
+           //        ValidAudience = Configuration["JWT:ValidAudience"],
+           //        ValidIssuer = Configuration["JWT:ValidIssuer"],
+           //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+           //    };
+           //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -152,7 +158,11 @@ namespace Libraria
                 endpoints.MapControllers();
             });
 
-          
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<LibrariaDbContext>();
+                context.Database.EnsureCreated();
+            }
         }
     }
 }

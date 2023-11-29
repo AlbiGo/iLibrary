@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+#nullable disable
+
 namespace Libraria.Data.Migrations
 {
     [DbContext(typeof(LibrariaDbContext))]
@@ -15,9 +17,13 @@ namespace Libraria.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.13")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "7.0.14")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Libraria.Entity.Entities.Inventari", b =>
                 {
@@ -58,32 +64,32 @@ namespace Libraria.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("3c3e5ae6-8bee-44ae-81fa-b2630c870f2d"),
+                            ID = new Guid("0b38ed91-084d-471e-879b-fa2c14f539ba"),
                             Pershkrimi = "Roman"
                         },
                         new
                         {
-                            ID = new Guid("41380785-09f9-499b-95da-b877fa2f14b7"),
+                            ID = new Guid("3767dd7d-6733-42c4-9cbc-d38f5d8f69f1"),
                             Pershkrimi = "Proze"
                         },
                         new
                         {
-                            ID = new Guid("d82bb852-d847-469b-ae11-3f2a87a3e9f1"),
+                            ID = new Guid("41ee4eaf-c98e-4766-ad9d-a743376d7577"),
                             Pershkrimi = "POezi"
                         },
                         new
                         {
-                            ID = new Guid("79687f61-eaf0-456b-a6ff-9054de7c1226"),
+                            ID = new Guid("b2f41687-6b0a-4cbc-a9e6-37f8cfda5d2f"),
                             Pershkrimi = "Drama"
                         },
                         new
                         {
-                            ID = new Guid("a96d1f34-3687-4523-9a67-65907c24880e"),
+                            ID = new Guid("813d3ac8-cd78-4d71-8b2d-6e93261e8ec5"),
                             Pershkrimi = "Biografi"
                         },
                         new
                         {
-                            ID = new Guid("25ac6d6b-30c8-488b-b587-e19641365843"),
+                            ID = new Guid("684d9ee5-5496-4a52-bd3b-2926e54a6cc9"),
                             Pershkrimi = "Histori"
                         });
                 });
@@ -444,15 +450,13 @@ namespace Libraria.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DataRegj")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -478,12 +482,10 @@ namespace Libraria.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -504,28 +506,20 @@ namespace Libraria.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers");
+                    b.ToTable("Perdoruesit");
                 });
 
             modelBuilder.Entity("Libraria.Entity.Entities.StatusKthimLibri", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Pershkrimi")
                         .IsRequired()
@@ -570,27 +564,27 @@ namespace Libraria.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("2311a620-6c80-4ef1-9c8f-791bee8983e7"),
+                            ID = new Guid("a520f3bd-cc38-49a2-b0ae-90c3488d44c2"),
                             Pershkrimi = "I Lire"
                         },
                         new
                         {
-                            ID = new Guid("a7cfb9ff-ccbf-48c0-b972-693be1657142"),
+                            ID = new Guid("fc327ea8-00b5-45ab-9a51-24cdcb13bb2d"),
                             Pershkrimi = "I dhene"
                         },
                         new
                         {
-                            ID = new Guid("796b00b4-aa54-4429-a14c-87784c0f2654"),
+                            ID = new Guid("b8a65156-5ce2-4ea1-8ad6-14135e4c9a6a"),
                             Pershkrimi = "I Demtuar"
                         },
                         new
                         {
-                            ID = new Guid("0f9529f2-5649-4cf6-b29d-8315b243419c"),
+                            ID = new Guid("76655f25-b6a8-4b06-99c0-1102c0f1d007"),
                             Pershkrimi = "I Hequr"
                         },
                         new
                         {
-                            ID = new Guid("1e9bd1f2-6f3f-4b62-9141-db74a0c0ec20"),
+                            ID = new Guid("a86e38a2-9743-4ec6-a884-c3d669542185"),
                             Pershkrimi = "I Mbaruar"
                         });
                 });
@@ -599,8 +593,9 @@ namespace Libraria.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Pershkrimi")
                         .HasColumnType("nvarchar(max)");
@@ -628,145 +623,31 @@ namespace Libraria.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles");
+                    b.ToTable("IdentityRole");
 
                     b.HasData(
                         new
                         {
-                            Id = "6e417aff-1d28-4870-9d8e-c41a286bcae2",
-                            ConcurrencyStamp = "38882bab-bc4c-4003-b0ba-e163a7742aed",
+                            Id = "25d5d763-7e3a-403a-aa91-73bc7ccbb3ce",
                             Name = "Menaxher",
                             NormalizedName = "Menaxher"
                         },
                         new
                         {
-                            Id = "ec51d477-3740-4571-945b-4952d45fda66",
-                            ConcurrencyStamp = "500ba9b7-e2c2-4790-aaf3-e5fb71f28f45",
+                            Id = "b0680f13-8335-48f4-bd7e-3d7c01bae504",
                             Name = "Punonjese Sporteli",
                             NormalizedName = "Punonjese Sporteli"
                         });
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("LoginProvider", "ProviderKey");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserLogins");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetUserRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId", "LoginProvider", "Name");
-
-                    b.ToTable("AspNetUserTokens");
                 });
 
             modelBuilder.Entity("Libraria.Entity.Entities.Inventari", b =>
@@ -841,57 +722,6 @@ namespace Libraria.Data.Migrations
                     b.Navigation("Lexues");
 
                     b.Navigation("Liber");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
-                {
-                    b.HasOne("Libraria.Entity.Entities.Perdorues", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.HasOne("Libraria.Entity.Entities.Perdorues", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Libraria.Entity.Entities.Perdorues", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.HasOne("Libraria.Entity.Entities.Perdorues", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
