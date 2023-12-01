@@ -29,6 +29,7 @@ namespace Libraria.Entity.Entities
         public string FotoLibri { get; set; }
        // public int? Sasia { get; set; }
 
+        public string IBN { get; set; }
 
         public virtual KategoriLibri Kategori { get; set; }
         public virtual StatusLibri Status { get; set; }
