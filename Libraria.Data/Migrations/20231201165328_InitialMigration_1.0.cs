@@ -144,6 +144,7 @@ namespace Libraria.Data.Migrations
                     DataRegj = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FotoProfiliURl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Foto = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Datelindja = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -334,8 +335,8 @@ namespace Libraria.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5533496f-4610-4b49-ab44-798ecb5ad845", null, "Menaxher", "Menaxher" },
-                    { "a0e188ee-4e93-4a00-b4e1-f0d3d11d8ea2", null, "Punonjese Sporteli", "Punonjese Sporteli" }
+                    { "a7a8dc2d-d814-4d21-a173-06ea618e607c", null, "Punonjese Sporteli", "Punonjese Sporteli" },
+                    { "d57998af-4451-4b9c-a4d1-d5ea4955c65d", null, "Menaxher", "Menaxher" }
                 });
 
             migrationBuilder.InsertData(
@@ -343,12 +344,12 @@ namespace Libraria.Data.Migrations
                 columns: new[] { "ID", "Pershkrimi" },
                 values: new object[,]
                 {
-                    { new Guid("85af25c5-c475-4243-ae76-8c863c839ee7"), "Roman" },
-                    { new Guid("973ccc51-b096-4538-becd-2e5ecf312c87"), "Drama" },
-                    { new Guid("a458a592-6eb7-470b-8c06-f59bafe8d641"), "Biografi" },
-                    { new Guid("cdb4e79c-fa02-43cc-83f1-664049bddc1c"), "POezi" },
-                    { new Guid("e6a5a93d-c689-4dd3-92eb-4ea835e7366c"), "Proze" },
-                    { new Guid("f5512214-2186-4c26-88e0-8549c958ccb8"), "Histori" }
+                    { new Guid("0df3455a-a939-4396-8ddb-01ec0d8be141"), "Roman" },
+                    { new Guid("33f767b9-6953-4586-8a36-1b71fb89b2e8"), "POezi" },
+                    { new Guid("65affaae-7019-407e-ab44-2f3bfe134912"), "Histori" },
+                    { new Guid("6a3eccfd-af85-401d-bf79-a00f878ac00d"), "Biografi" },
+                    { new Guid("7fa25e2e-66a0-4629-b9ad-806abdd6348a"), "Drama" },
+                    { new Guid("c103c557-92a2-4d15-a74f-3ac1b7ccf078"), "Proze" }
                 });
 
             migrationBuilder.InsertData(
@@ -366,11 +367,11 @@ namespace Libraria.Data.Migrations
                 columns: new[] { "ID", "Pershkrimi" },
                 values: new object[,]
                 {
-                    { new Guid("34417029-87b0-430a-a565-868a9f21117c"), "I Demtuar" },
-                    { new Guid("439eb316-5e96-4dd7-a227-0bf90bf27920"), "I Lire" },
-                    { new Guid("6813e0c4-da7b-480a-9754-9a1227678b63"), "I Mbaruar" },
-                    { new Guid("91e82fb1-6a2f-4273-80c7-af59fe8f7bb3"), "I Hequr" },
-                    { new Guid("f7bd5bad-a58a-413d-baa8-b133b002dfc7"), "I dhene" }
+                    { new Guid("0e90c09f-8c2c-4a69-afc2-ba36731193d5"), "I Hequr" },
+                    { new Guid("2e8f2fb1-9afb-4f9e-b1fe-665f773a7360"), "I dhene" },
+                    { new Guid("4ad07d84-787a-4304-b8e9-562cd421f804"), "I Lire" },
+                    { new Guid("8a7a073f-d062-4923-90e6-23d1fa020995"), "I Mbaruar" },
+                    { new Guid("b684c4a1-68c9-4ac5-8171-9fee51cfbb07"), "I Demtuar" }
                 });
 
             migrationBuilder.InsertData(

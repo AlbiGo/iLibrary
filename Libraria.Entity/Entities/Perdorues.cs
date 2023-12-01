@@ -18,7 +18,7 @@ namespace Libraria.Entity.Entities
         public string FotoProfiliURl { get; set; }
         public string Foto { get; set; }
 
-
+        public DateTime? Datelindja { get; set; }
         public Perdorues()
         {
             Statusi = true;
