@@ -17,7 +17,6 @@ namespace Libraria.Data.Database
 
         }
       
-
         public DbSet<Liber> Librat { get; set; }
         public DbSet<StatusLibri> Statuset { get; set; }
         public DbSet<Perdorues> Perdoruesit { get; set; }

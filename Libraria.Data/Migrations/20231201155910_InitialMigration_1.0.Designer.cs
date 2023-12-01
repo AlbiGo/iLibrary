@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Libraria.Data.Migrations
 {
     [DbContext(typeof(LibrariaDbContext))]
-    [Migration("20231128233113_InitialMigration_1.0")]
+    [Migration("20231201155910_InitialMigration_1.0")]
     partial class InitialMigration_10
     {
         /// <inheritdoc />
@@ -67,32 +67,32 @@ namespace Libraria.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("4554120f-0258-43fe-8edd-d7d53904d047"),
+                            ID = new Guid("908288bd-94b1-4bde-affa-f75dcc6aa74c"),
                             Pershkrimi = "Roman"
                         },
                         new
                         {
-                            ID = new Guid("9ba95c58-fe04-473a-bd73-86f3a00e4374"),
+                            ID = new Guid("02f86cc4-5247-49ab-b0a5-d26f12bc8305"),
                             Pershkrimi = "Proze"
                         },
                         new
                         {
-                            ID = new Guid("afa0ee5f-208b-471f-8ccb-656eadc6c0ba"),
+                            ID = new Guid("631d8e51-f884-4ee8-b677-158b9133152a"),
                             Pershkrimi = "POezi"
                         },
                         new
                         {
-                            ID = new Guid("f6c56402-fc10-4799-9a19-eb0a8d55fbc6"),
+                            ID = new Guid("ccc739ac-5a77-4a44-b1b3-7aabe49ef090"),
                             Pershkrimi = "Drama"
                         },
                         new
                         {
-                            ID = new Guid("ea1b334b-ac60-434c-9bad-0640b521317f"),
+                            ID = new Guid("09325ea8-768a-44c5-bc1a-0a05690d6be0"),
                             Pershkrimi = "Biografi"
                         },
                         new
                         {
-                            ID = new Guid("41955450-2339-4d1a-ba0e-f37d0a320944"),
+                            ID = new Guid("ad613109-8799-4acd-bde9-455425731924"),
                             Pershkrimi = "Histori"
                         });
                 });
@@ -567,27 +567,27 @@ namespace Libraria.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("05610515-d515-48b0-8486-f2e08d506234"),
+                            ID = new Guid("c4949455-9f09-428c-bf68-600ae9519ec3"),
                             Pershkrimi = "I Lire"
                         },
                         new
                         {
-                            ID = new Guid("aa51c7b3-156d-4610-bf40-09481414805d"),
+                            ID = new Guid("51ddafa2-fa8a-48c5-9bd8-9c01c132d7f0"),
                             Pershkrimi = "I dhene"
                         },
                         new
                         {
-                            ID = new Guid("38febc94-9e4c-4055-8e2e-0da252518e5b"),
+                            ID = new Guid("38789798-a3a6-4d3f-9fb6-3ad66dc4f42b"),
                             Pershkrimi = "I Demtuar"
                         },
                         new
                         {
-                            ID = new Guid("41c5185c-66c0-4495-898a-0dc61c70ef39"),
+                            ID = new Guid("f6599f02-541a-4ddd-b7af-0127d3195349"),
                             Pershkrimi = "I Hequr"
                         },
                         new
                         {
-                            ID = new Guid("e57abc57-67f4-40d3-accc-9c36436d1e18"),
+                            ID = new Guid("83bb8839-ba42-4fa1-aa61-a7624f29f57b"),
                             Pershkrimi = "I Mbaruar"
                         });
                 });
@@ -641,13 +641,13 @@ namespace Libraria.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6e36aace-efc3-4bfe-8994-f60403a9dc1e",
+                            Id = "258b45af-1c1e-4309-bf12-4d086ae70cce",
                             Name = "Menaxher",
                             NormalizedName = "Menaxher"
                         },
                         new
                         {
-                            Id = "6ee69be8-d573-4dd0-868b-42f3052dbd87",
+                            Id = "5d4293f1-a8d9-4196-b49d-3d08d2623659",
                             Name = "Punonjese Sporteli",
                             NormalizedName = "Punonjese Sporteli"
                         });
