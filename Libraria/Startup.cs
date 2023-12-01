@@ -56,14 +56,12 @@ namespace Libraria
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddSingleton<IConfiguration>(Configuration);   // IConfiguration explicitly
-            //services.AddSingleton<AppConfigInterface, AppConfig>();
+
             // Add our Config object so it can be injected
  
             services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
 
-            // *If* you need access to generic IConfiguration this is **required**
-            services.AddSingleton<IConfiguration>(Configuration);
-
+            services.AddScoped<AppConfigInterface, AppConfig>();
             Configuration.GetSection("AppConfig").Bind(_appConfig);
             services.AddSqlServer<LibrariaDbContext>(_appConfig.Connection);
 
@@ -157,12 +155,6 @@ namespace Libraria
             {
                 endpoints.MapControllers();
             });
-
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetRequiredService<LibrariaDbContext>();
-                context.Database.EnsureCreated();
-            }
         }
     }
 }
