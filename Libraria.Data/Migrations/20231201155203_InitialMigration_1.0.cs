@@ -334,8 +334,8 @@ namespace Libraria.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "6e36aace-efc3-4bfe-8994-f60403a9dc1e", null, "Menaxher", "Menaxher" },
-                    { "6ee69be8-d573-4dd0-868b-42f3052dbd87", null, "Punonjese Sporteli", "Punonjese Sporteli" }
+                    { "5533496f-4610-4b49-ab44-798ecb5ad845", null, "Menaxher", "Menaxher" },
+                    { "a0e188ee-4e93-4a00-b4e1-f0d3d11d8ea2", null, "Punonjese Sporteli", "Punonjese Sporteli" }
                 });
 
             migrationBuilder.InsertData(
@@ -343,12 +343,12 @@ namespace Libraria.Data.Migrations
                 columns: new[] { "ID", "Pershkrimi" },
                 values: new object[,]
                 {
-                    { new Guid("41955450-2339-4d1a-ba0e-f37d0a320944"), "Histori" },
-                    { new Guid("4554120f-0258-43fe-8edd-d7d53904d047"), "Roman" },
-                    { new Guid("9ba95c58-fe04-473a-bd73-86f3a00e4374"), "Proze" },
-                    { new Guid("afa0ee5f-208b-471f-8ccb-656eadc6c0ba"), "POezi" },
-                    { new Guid("ea1b334b-ac60-434c-9bad-0640b521317f"), "Biografi" },
-                    { new Guid("f6c56402-fc10-4799-9a19-eb0a8d55fbc6"), "Drama" }
+                    { new Guid("85af25c5-c475-4243-ae76-8c863c839ee7"), "Roman" },
+                    { new Guid("973ccc51-b096-4538-becd-2e5ecf312c87"), "Drama" },
+                    { new Guid("a458a592-6eb7-470b-8c06-f59bafe8d641"), "Biografi" },
+                    { new Guid("cdb4e79c-fa02-43cc-83f1-664049bddc1c"), "POezi" },
+                    { new Guid("e6a5a93d-c689-4dd3-92eb-4ea835e7366c"), "Proze" },
+                    { new Guid("f5512214-2186-4c26-88e0-8549c958ccb8"), "Histori" }
                 });
 
             migrationBuilder.InsertData(
@@ -366,11 +366,11 @@ namespace Libraria.Data.Migrations
                 columns: new[] { "ID", "Pershkrimi" },
                 values: new object[,]
                 {
-                    { new Guid("05610515-d515-48b0-8486-f2e08d506234"), "I Lire" },
-                    { new Guid("38febc94-9e4c-4055-8e2e-0da252518e5b"), "I Demtuar" },
-                    { new Guid("41c5185c-66c0-4495-898a-0dc61c70ef39"), "I Hequr" },
-                    { new Guid("aa51c7b3-156d-4610-bf40-09481414805d"), "I dhene" },
-                    { new Guid("e57abc57-67f4-40d3-accc-9c36436d1e18"), "I Mbaruar" }
+                    { new Guid("34417029-87b0-430a-a565-868a9f21117c"), "I Demtuar" },
+                    { new Guid("439eb316-5e96-4dd7-a227-0bf90bf27920"), "I Lire" },
+                    { new Guid("6813e0c4-da7b-480a-9754-9a1227678b63"), "I Mbaruar" },
+                    { new Guid("91e82fb1-6a2f-4273-80c7-af59fe8f7bb3"), "I Hequr" },
+                    { new Guid("f7bd5bad-a58a-413d-baa8-b133b002dfc7"), "I dhene" }
                 });
 
             migrationBuilder.InsertData(
